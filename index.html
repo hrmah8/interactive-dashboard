@@ -16,44 +16,111 @@
 <body>
     <h1>My Interactive Dashboard</h1>
 
-    <p>
-        This dashboard was created by HDung Rmah for the WEB-115 course at Wake Tech
-    </p>
+<p>
+    This dashboard was created by HDung Rmah for the WEB-115 course at Wake Tech.
+</p>
 
-    <!-- The <noscript> is for web browsers with JavaScript rendering disabled. -->
-    <noscript>
-        Unfortunately, your web browser does not support JavaScript.
-    </noscript>
+<!-- Message for browsers with JavaScript disabled -->
+<noscript>
+    Unfortunately, your web browser does not support JavaScript.
+</noscript>
 
-    <div class="container">
-        <div class="row">
+<div class="container">
 
-            <div class="col" id="weekly-tasks">
+    <div class="row">
 
-                <h2>Weekly Task Goals</h2>
+        <!-- Imperial/Metric Converter -->
+        <div class="col" id="metric-converter">
 
-                <form id="goal-form">
+            <h2>Imperial/Metric Converter</h2>
 
-                    <label for="user-name">Name:</label>
-                    <input type="text" id="user-name" required>
+            <form id="converter-form">
 
-                    <label for="daily-goal">Daily Task Goal:</label>
-                    <input type="number" id="daily-goal" required>
+                <label for="input-value">Enter a value:</label>
 
-                    <label for="bonus-tasks">Weekly Bonus Tasks:</label>
-                    <input type="number" id="bonus-tasks" required>
+                <input
+                    type="number"
+                    id="input-value"
+                    step="any"
+                    required
+                >
 
-                    <button type="submit" id="goal-btn">Calculate Goal</button>
+                <label for="conversion-type">Choose a conversion:</label>
 
-                </form>
+                <select id="conversion-type">
 
-                <p id="goal-message"></p>
+                    <option value="1">Inch to Centimeter</option>
+                    <option value="2">Foot to Centimeter</option>
+                    <option value="3">Yard to Meter</option>
+                    <option value="4">Mile to Kilometer</option>
+                    <option value="5">Centimeter to Inch</option>
+                    <option value="6">Centimeter to Foot</option>
+                    <option value="7">Meter to Yard</option>
+                    <option value="8">Kilometer to Mile</option>
 
-                <script src="js/task-manager.js"></script>
+                </select>
 
-            </div>
+                <button type="submit" id="convert-button">
+                    Convert
+                </button>
+
+            </form>
+
+            <!-- Converter output -->
+            <p id="conversion-result"></p>
+
+            <!-- Metric converter JavaScript -->
+            <script src="js/metric-converter.js" defer></script>
+
 
         </div>
+
+
+        <!-- Weekly Task Goals -->
+        <div class="col" id="weekly-tasks">
+
+            <h2>Weekly Task Goals</h2>
+
+            <form id="goal-form">
+
+                <label for="user-name">Name:</label>
+
+                <input
+                    type="text"
+                    id="user-name"
+                    required
+                >
+
+                <label for="daily-goal">Daily Task Goal:</label>
+
+                <input
+                    type="number"
+                    id="daily-goal"
+                    required
+                >
+
+                <label for="bonus-tasks">Weekly Bonus Tasks:</label>
+
+                <input
+                    type="number"
+                    id="bonus-tasks"
+                    required
+                >
+
+                <button type="submit" id="goal-btn">
+                    Calculate Goal
+                </button>
+
+            </form>
+
+            <!-- Weekly goal output -->
+            <p id="goal-message"></p>
+
+            <!-- Weekly task JavaScript -->
+            <script src="js/task-manager.js"></script>
+
+        </div>
+
     </div>
-</body>
-</html>
+
+</div>

@@ -1,0 +1,35 @@
+#metric-converter {
+padding: 25px;
+margin: 20px 0;
+border: 1px solid #ddd;
+border-radius: 8px;
+background-color: #f8f9fa;
+}
+
+#metric-converter h2 {
+margin-bottom: 20px;
+}
+
+#converter-form {
+display: flex;
+flex-direction: column;
+gap: 10px;
+max-width: 400px;
+}
+
+#converter-form input,
+#converter-form select,
+#converter-form button {
+padding: 10px;
+font-size: 1rem;
+}
+
+#converter-form button {
+cursor: pointer;
+}
+
+#conversion-result {
+margin-top: 20px;
+font-size: 1.1rem;
+font-weight: bold;
+}
