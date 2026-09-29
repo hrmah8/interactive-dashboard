@@ -142,3 +142,25 @@ BEGIN
     END IF
 
 END
+
+Magic Eight Ball
+
+The Magic Eight Ball is an interactive feature of the dashboard that allows users to enter a yes/no question and receive a randomly selected answer.
+
+Technical Features
+
+Uses HTML to create the question field, Magic Eight Ball image, answer area, and buttons.
+
+Uses CSS to style the Magic Eight Ball and provide the shaking animation.
+
+Uses JavaScript event listeners to respond when the user interacts with the ball and reset button.
+
+Uses Math.random() to select a random response from an array of possible answers.
+
+Validates that the user has entered a question before displaying an answer.
+
+The reset button hides the current answer so the user can ask another question.
+
+Includes a bonus feature that allows users to add new responses to the Magic Eight Ball response array.
+
+The project was developed and tested on a separate development Git branch before being merged into main.

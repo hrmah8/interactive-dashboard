@@ -29,23 +29,52 @@
 
     <div class="row">
 
-        <!-- Imperial/Metric Converter -->
+        <!-- Magic Eight Ball -->
+        <div class="col" id="magic-eight-ball">
+
+            <h2 class="heading">Magic Eight Ball</h2>
+
+            <form id="eight-ball-form">
+
+                <p>
+                    Type a yes/no question below, then click on the Eight Ball
+                    below to get your answer!
+                </p>
+
+                <input id="question" name="question" size="80">
+
+                <div id="magicEightBall">
+                    <div id="circle"></div>
+
+                    <img
+                        id="ball"
+                        src="img/magic-eight-ball.png"
+                        alt="Magic Eight Ball"
+                    >
+                </div>
+
+                <button id="reset" name="reset" type="reset">
+                    Ask another question
+                </button>
+
+                <!-- Bonus: add a new Magic Eight Ball response -->
+                <button id="addResponse" type="button">
+                    Add Response
+                </button>
+
+            </form>
+
+            <br>
+
+        </div>
+
+
+        <!-- Metric Converter -->
         <div class="col" id="metric-converter">
 
-            <h2>Imperial/Metric Converter</h2>
+            <h2>Metric Converter</h2>
 
             <form id="converter-form">
-
-                <label for="input-value">Enter a value:</label>
-
-                <input
-                    type="number"
-                    id="input-value"
-                    step="any"
-                    required
-                >
-
-                <label for="conversion-type">Choose a conversion:</label>
 
                 <select id="conversion-type">
 
@@ -68,10 +97,6 @@
 
             <!-- Converter output -->
             <p id="conversion-result"></p>
-
-            <!-- Metric converter JavaScript -->
-            <script src="js/metric-converter.js" defer></script>
-
 
         </div>
 
@@ -116,11 +141,14 @@
             <!-- Weekly goal output -->
             <p id="goal-message"></p>
 
-            <!-- Weekly task JavaScript -->
-            <script src="js/task-manager.js"></script>
-
         </div>
 
     </div>
 
 </div>
+
+
+<!-- JavaScript files -->
+<script src="js/magic-eight-ball.js" defer></script>
+<script src="js/metric-converter.js" defer></script>
+<script src="js/task-manager.js" defer></script>
