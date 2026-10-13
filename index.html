@@ -50,7 +50,7 @@
                         id="ball"
                         src="img/magic-eight-ball.png"
                         alt="Magic Eight Ball"
-                    >
+>
                 </div>
 
                 <button id="reset" name="reset" type="reset">
@@ -102,10 +102,13 @@
 
 
         <!-- Weekly Task Goals -->
+        
+        <!-- Weekly Task Goals and Task Manager -->
         <div class="col" id="weekly-tasks">
 
             <h2>Weekly Task Goals</h2>
 
+            <!-- Existing weekly goal calculator -->
             <form id="goal-form">
 
                 <label for="user-name">Name:</label>
@@ -141,12 +144,34 @@
             <!-- Weekly goal output -->
             <p id="goal-message"></p>
 
+            <!-- New Task Manager interface -->
+            <div id="task-list">
+
+                <h3>Weekly Task List</h3>
+
+                <p>Enter a task below to manage your goals.</p>
+
+                <form id="task-form">
+
+                    <label for="task-name">Enter task:</label>
+
+                    <input
+                        type="text"
+                        id="task-name"
+                        name="task-name"
+                    >
+
+                    <button type="button" id="add-task">
+                        Add Task
+                    </button>
+
+                </form>
+
+            </div>
+
         </div>
-
-    </div>
-
-</div>
-
+</body>
+</html>
 
 <!-- JavaScript files -->
 <script src="js/magic-eight-ball.js" defer></script>

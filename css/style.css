@@ -1,8 +1,110 @@
+* General page styling */
 body {
     background-color: lightblue;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #222;
 }
 
+/* Main dashboard heading */
 h1 {
     color: darkblue;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Dashboard introduction */
+body > p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Dashboard section headings */
+h2 {
+    color: darkblue;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #174a70;
+    margin-top: 20px;
+}
+
+/* Dashboard sections */
+#magic-eight-ball,
+#metric-converter,
+#weekly-tasks {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Form labels and inputs */
+label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+button {
+    font-family: inherit;
+    margin-bottom: 8px;
+}
+
+/* Buttons */
+button {
+    background-color: darkblue;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #174a70;
+}
+
+/* Task Manager */
+#task-list {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 2px solid #d6e5f0;
+}
+
+#task-name {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#user-tasks {
+    padding-left: 25px;
+}
+
+#user-tasks li {
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+
+/* Make the dashboard easier to use on small screens */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+    }
+
+    #magic-eight-ball,
+    #metric-converter,
+    #weekly-tasks {
+        margin-bottom: 15px;
+    }
+
+    #question {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 }
