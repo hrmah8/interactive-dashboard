@@ -8,6 +8,7 @@
 - [ ] Integrate a task list with array storage.
 - [ ] Add JavaScript logic for a live clock.
 - [X] Add a weekly task goal calculator
+- [ ] Dynamic Weekly Task Manager
 
 ## Weekly Task Goals
 
