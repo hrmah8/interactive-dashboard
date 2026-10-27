@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -144,36 +144,103 @@
             <!-- Weekly goal output -->
             <p id="goal-message"></p>
 
-            <!-- New Task Manager interface -->
-            <div id="task-list">
+            <!-- Task Manager -->
+<div class="task-manager mt-4">
 
-                <h3>Weekly Task List</h3>
+    <h2>Task Manager</h2>
 
-                <p>Enter a task below to manage your goals.</p>
+    <p>
+        Add tasks, set priorities, mark important tasks,
+        and track your progress.
+    </p>
 
-                <form id="task-form">
+    <!-- Form to add tasks -->
+    <form id="task-form">
 
-                    <label for="task-name">Enter task:</label>
+        <div class="mb-3">
+            <label for="task-name" class="form-label">
+                Task Name:
+            </label>
 
-                    <input
-                        type="text"
-                        id="task-name"
-                        name="task-name"
-                    >
-
-                    <button type="button" id="add-task">
-                        Add Task
-                    </button>
-
-                </form>
-
-            </div>
-
+            <input
+                type="text"
+                id="task-name"
+                name="task-name"
+                class="form-control"
+                placeholder="Enter a task"
+                required
+            >
         </div>
+
+        <!-- Task priority -->
+        <div class="mb-3">
+            <label for="task-priority" class="form-label">
+                Priority:
+            </label>
+
+            <select
+                id="task-priority"
+                name="task-priority"
+                class="form-select"
+            >
+                <option value="High">High</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+
+        <!-- Important task checkbox -->
+        <div class="form-check mb-3">
+            <input
+                type="checkbox"
+                id="task-important"
+                name="task-important"
+                class="form-check-input"
+            >
+
+            <label
+                for="task-important"
+                class="form-check-label"
+            >
+                Mark as important
+            </label>
+        </div>
+
+        <!-- Add task button -->
+        <button
+            type="submit"
+            class="btn btn-primary"
+        >
+            Add Task
+        </button>
+
+    </form>
+
+    <!-- Delete all tasks -->
+    <button
+        type="button"
+        id="delete-all-tasks"
+        class="btn btn-danger mt-3"
+    >
+        Delete All Tasks
+    </button>
+
+    <!-- Dynamic task display -->
+    <div class="mt-4">
+
+        <h3>My Task List</h3>
+
+        <div id="task-list" aria-live="polite">
+            <!-- JavaScript will display tasks here -->
+        </div>
+
+    </div>
+
+</div>
 </body>
+<!-- JavaScript files -->
+    <script src="js/magic-eight-ball.js" defer></script>
+    <script src="js/metric-converter.js" defer></script>
+    <script src="js/task-manager.js" defer></script>
 </html>
 
-<!-- JavaScript files -->
-<script src="js/magic-eight-ball.js" defer></script>
-<script src="js/metric-converter.js" defer></script>
-<script src="js/task-manager.js" defer></script>
