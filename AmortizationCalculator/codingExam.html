@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amortization Calculator</title>
+</head>
+<body>
+
+    <p>Name: HDung Rmah</p>
+    <p>Email: hrmah8@my.waketech.edu</p>
+    <p>Date: October 19, 2026</p>
+
+    <h1>Mortgage Amortization Calculator</h1>
+
+    <button id="Button1">Calculate Amortization</button>
+
+    <div id="results"></div>
+
+    <script>
+        // Run the calculator when the button is clicked
+        document.getElementById("Button1").addEventListener("click", function () {
+
+            // Prompt for the loan amount
+            let loanAmount = Number(prompt(
+                "Enter the loan amount without commas:"
+            ));
+
+            if (!Number.isFinite(loanAmount) || loanAmount <= 0) {
+                alert("Please enter a valid loan amount greater than zero.");
+                return;
+            }
+
+            // Prompt for the loan term
+            let termYears = Number(prompt(
+                "Enter the loan term in years (15 or 30):"
+            ));
+
+            if (termYears !== 15 && termYears !== 30) {
+                alert("The loan term must be either 15 or 30 years.");
+                return;
+            }
+
+            // Set the fixed interest rate
+            let interestRate = 0.0575;
+            let monthlyRate = interestRate / 12;
+            let termMonths = termYears * 12;
+
+            // Calculate the monthly mortgage payment
+            let monthlyPayment = (
+                (monthlyRate * loanAmount) /
+                (1 - Math.pow(1 + monthlyRate, termYears * -12))
+            ).toFixed(2);
+
+            monthlyPayment = Number(monthlyPayment);
+
+            // Calculate total interest and total mortgage amount
+            let totalInterest = (
+                (monthlyPayment * termMonths) - loanAmount
+            ).toFixed(2);
+
+            let totalLoan = (
+                loanAmount + Number(totalInterest)
+            ).toFixed(2);
+
+            // Display the mortgage information
+            let output = `
+                <h2>Mortgage Summary</h2>
+                <p>Mortgage term: ${termYears} years</p>
+                <p>Mortgage interest rate: 5.75%</p>
+                <p>Original loan amount: $${loanAmount.toFixed(2)}</p>
+                <p>Monthly payment: $${monthlyPayment.toFixed(2)}</p>
+                <p>Total interest amount: $${totalInterest}</p>
+                <p>Total mortgage amount: $${totalLoan}</p>
+
+                <h2>Monthly Amortization Schedule</h2>
+
+                <table border="1" cellpadding="5">
+                    <tr>
+                        <th>Month</th>
+                        <th>Monthly Payment</th>
+                        <th>Mortgage Loan Balance</th>
+                    </tr>
+            `;
+
+            // Calculate and display the balance for each month
+            let balance = Number(totalLoan);
+            let month = 1;
+
+            while (month <= termMonths) {
+
+                balance = Number(
+                    (balance - monthlyPayment).toFixed(2)
+                );
+
+                // Prevent a negative balance from being displayed
+                if (balance <= 0) {
+                    balance = 0;
+                }
+
+                output += `
+                    <tr>
+                        <td>${month}</td>
+                        <td>$${monthlyPayment.toFixed(2)}</td>
+                        <td>$${balance.toFixed(2)}</td>
+                    </tr>
+                `;
+
+                // Stop when the balance reaches zero
+                if (balance === 0) {
+                    output += `
+                        </table>
+                        <p>This is the Ending Amortization Calculator...</p>
+                    `;
+                    break;
+                }
+
+                month++;
+            }
+
+            // Display the results below the button
+            document.getElementById("results").innerHTML = output;
+
+        });
+    </script>
+
+</body>
+</html>
