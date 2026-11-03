@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Interactive Dashboard</title>
 
+    <!-- Existing dashboard CSS -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- New Digital Clock CSS -->
+    <link rel="stylesheet" href="css/digital-clock.css">
 
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIlkxFvILFv47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Bootstrap JavaScript -->
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYjRrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- New Digital Clock JavaScript -->
+    <script defer src="js/digital-clock.js"></script>
+
 </head>
+
 
 <body>
     <h1>My Interactive Dashboard</h1>
@@ -28,6 +39,18 @@
 <div class="container">
 
     <div class="row">
+
+        <!-- Digital Clock and Date -->
+        <div id="digital-clock" class="col">
+
+            <h3>Current Time &amp; Date</h3>
+
+            <p id="clock-face">00:00:00 AM</p>
+
+            <p id="calendar-date"></p>
+
+        </div>
+
 
         <!-- Magic Eight Ball -->
         <div class="col" id="magic-eight-ball">
@@ -237,10 +260,9 @@
     </div>
 
 </div>
-</body>
-<!-- JavaScript files -->
+    <!-- JavaScript files -->
     <script src="js/magic-eight-ball.js" defer></script>
     <script src="js/metric-converter.js" defer></script>
     <script src="js/task-manager.js" defer></script>
+</body>
 </html>
-

@@ -1,0 +1,31 @@
+
+/* Digital Clock Container */
+#digital-clock {
+    background-color: #e8f1f8;
+    color: #1b3555;
+    text-align: center;
+    padding: 25px;
+    margin: 15px 0;
+    border: 2px solid #1b3555;
+    border-radius: 12px;
+}
+
+/* Clock Heading */
+#digital-clock h3 {
+    color: #1b3555;
+    font-weight: bold;
+}
+
+/* Time Display */
+#clock-face {
+    font-size: 32px;
+    font-weight: bold;
+    color: #176b45;
+    margin: 15px 0;
+}
+
+/* Calendar Date */
+#calendar-date {
+    font-size: 18px;
+    color: #333333;
+}
